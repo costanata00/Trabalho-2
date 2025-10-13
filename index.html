@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho Interação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: cornsilk;
+            margin: 20px;
+            color: black;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 49%));
+            gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .tabela-inputs {
+            background: white;
+            border: black 2px solid;
+            padding: 20px;
+            max-width: 600px;
+            height: 500px;
+        }
+
+        .tabela-inputs label {
+            display: block;
+            box-sizing: border-box;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+
+        .tabela-inputs input {
+            margin-top: 5px;
+            padding: 6px;
+            font-size: 14px;
+        }
+
+        table {
+            border: black 1px solid;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        td input {
+            border: black 1px solid;
+            padding: 6px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tabela-inputs">
+        <label>
+            Nome da tabela:
+            <input type="text" id="nomeTabela" maxlength="90" value="Minha Tabela">
+            <br>
+        </label>
+        <label>
+            Nome da coluna 1:
+            <input type="text" id="coluna1" maxlength="30" value="Coluna 1">
+        </label>
+        <label>
+            Nome da coluna 2:
+            <input type="text" id="coluna2" maxlength="30" value="Coluna 2">
+        </label>
+        <label>
+            Nome da coluna 3:
+            <input type="text" id="coluna3" maxlength="30" value="Coluna 3">
+        </label>
+
+
+        <label>
+            Número de linhas:
+            <input type="number" id="numLinhas" min="1" max="30" value="4">
+            <br>
+        </label>
+        <label>
+            Cor do texto:
+            <input type="color" id="corTexto" value="#000000">
+            <br>
+        </label>
+        <label>
+            Cor da borda:
+            <input type="color" id="corBorda" value="#000000">
+            <br>
+        </label>
+        <label>
+            Cor do fundo:
+            <input type="color" id="corFundo" value="#ffffff">
+            <br>
+        </label>
+        <button id="criar">Inserir Tabela</button>
+        <br>
+    </div>
+    <script>
+        document.getElementById('criar').addEventListener('click', function () {
+
+            let nome = document.getElementById('nomeTabela').value;
+            let numLinhas = parseInt(document.getElementById('numLinhas').value);
+            let corTexto = document.getElementById('corTexto').value;
+            let corBorda = document.getElementById('corBorda').value;
+            let corFundo = document.getElementById('corFundo').value;
+
+            let container = document.createElement('div');
+
+            let tabela = document.createElement('table');
+            tabela.style.borderColor = corBorda;
+            tabela.style.backgroundColor = corFundo;
+            tabela.style.color = corTexto;
+
+            let caption = document.createElement('caption');
+            caption.innerText = nome;
+            caption.style.color = corTexto;
+            caption.style.backgroundColor = corFundo;
+            caption.style.borderColor = corBorda;
+            tabela.appendChild(caption);
+
+            let thead = document.createElement('thead');
+            let tRow = document.createElement('tr');
+            for (let j = 0; j < 3; j++) {
+                let th = document.createElement('th');
+                let colName = document.getElementById('coluna' + (j + 1)).value;
+                th.innerText = colName;
+                th.style.borderColor = corBorda;
+                th.style.color = corTexto;
+                th.style.backgroundColor = corFundo;
+                tRow.appendChild(th);
+            }
+            thead.appendChild(tRow);
+            tabela.appendChild(thead);
+
+            let tbody = document.createElement('tbody');
+            for (let i = 0; i < numLinhas; i++) {
+                let linha = document.createElement('tr');
+                for (let j = 0; j < 3; j++) {
+
+                    let celula = document.createElement('td');
+                    celula.style.borderColor = corBorda;
+                    celula.style.backgroundColor = corFundo;
+                    celula.style.color = corTexto;
+
+                    let input = document.createElement('input');
+                    input.type = 'text';
+                    input.style.width = '100%';
+                    input.style.color = corTexto;
+                    input.style.backgroundColor = corFundo;
+                    input.style.borderColor = corBorda;
+                    celula.appendChild(input);
+                    linha.appendChild(celula);
+                }
+                tbody.appendChild(linha);
+            }
+            tabela.appendChild(tbody);
+
+            let excluir = document.createElement('button');
+            excluir.innerText = 'Excluir tabela';
+            excluir.addEventListener('click', function () {
+                container.remove();
+            });
+
+            container.appendChild(tabela);
+            container.appendChild(excluir);
+            document.body.appendChild(container);
+        });
+    </script>
+</body>
+
+</html>
