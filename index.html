@@ -10,143 +10,144 @@
 
 <body>
   <!-- CABEÇALHO -->
-<div class="header-inputs" id="header-inputs">
-  <h2>Editor de Cabeçalho</h2>
-  <label>
-    Tipo de elemento:
-    <select id="tipoElem">
-      <option value="texto">Texto</option>
-      <option value="imagem">Imagem</option>
-      <option value="figura">Figura</option>
-      <option value="form">Formulário</option>
-    </select>
-  </label>
-  <div id="opTexto" class="opt-section">
-    <label>Texto: <input type="text" id="textoInput" placeholder="Digite seu texto"></label>
-    <label>Tamanho da fonte: <input type="number" id="tamanhoTexto" value="24" min="8" max="100"></label>
-  </div>
-  <div id="opImagem" class="opt-section" style="display:none;">
-    <label>URL da imagem: <input type="text" id="urlImagem" placeholder="https://exemplo.com/imagem.png"></label>
-    <label>Largura (px): <input type="number" id="larguraImg" value="200" min="10"></label>
-    <label>Altura (px): <input type="number" id="alturaImg" value="100" min="10"></label>
-  </div>
-  <div id="opFigura" class="opt-section" style="display:none;">
-  <label>URL da imagem:<input type="text" id="urlFigura"></label>
-  <label>Largura (px):<input type="number" id="larguraFigura" value="250" min="10"></label>
-  <label>Altura (px):<input type="number" id="alturaFigura" value="100" min="10"></label>
-  <label>Legenda:<input type="text" id="legendaFigura" placeholder="Digite a legenda"></label>
-</div>
+  <div class="Esquerda">
+    <div class="header-inputs" id="header-inputs">
+      <h2>Editor de Cabeçalho</h2>
+      <label>
+        Tipo de elemento:
+        <select id="tipoElem">
+          <option value="texto">Texto</option>
+          <option value="imagem">Imagem</option>
+          <option value="figura">Figura</option>
+          <option value="form">Formulário</option>
+        </select>
+      </label>
+      <div id="opTexto" class="opt-section">
+        <label>Texto: <input type="text" id="textoInput" placeholder="Digite seu texto"></label>
+        <label>Tamanho da fonte: <input type="number" id="tamanhoTexto" value="24" min="8" max="100"></label>
+      </div>
+      <div id="opImagem" class="opt-section" style="display:none;">
+        <label>URL da imagem: <input type="text" id="urlImagem" placeholder="https://exemplo.com/imagem.png"></label>
+        <label>Largura (px): <input type="number" id="larguraImg" value="200" min="10"></label>
+        <label>Altura (px): <input type="number" id="alturaImg" value="100" min="10"></label>
+      </div>
+      <div id="opFigura" class="opt-section" style="display:none;">
+        <label>URL da imagem:<input type="text" id="urlFigura"></label>
+        <label>Largura (px):<input type="number" id="larguraFigura" value="250" min="10"></label>
+        <label>Altura (px):<input type="number" id="alturaFigura" value="100" min="10"></label>
+        <label>Legenda:<input type="text" id="legendaFigura" placeholder="Digite a legenda"></label>
+      </div>
 
-  <label>Cor do texto: <input type="color" id="corTextoElem" value="#000000"></label>
-  <label>Cor do fundo: <input type="color" id="corFundoElem" value="#ffffff"></label>
-  <label>Cor da borda: <input type="color" id="corBordaElem" value="#000000"></label>
-  <label>Espessura da borda (px):<input type="number" id="espessuraFigura" value="2" min="0"></label>
-  <label>Largura da borda (px): <input type="number" id="larguraElem" value="250" min="10"></label>
-  <label>Altura da borda (px): <input type="number" id="alturaElem" value="100" min="10"></label>
-  <label>Alinhamento:
-    <select id="alinhamentoElem">
-      <option value="center">Centro</option>
-      <option value="left">Esquerda</option>
-      <option value="right">Direita</option>
-    </select>
-  </label>
+      <label>Cor do texto: <input type="color" id="corTextoElem" value="#000000"></label>
+      <label>Cor do fundo: <input type="color" id="corFundoElem" value="#ffffff"></label>
+      <label>Cor da borda: <input type="color" id="corBordaElem" value="#000000"></label>
+      <label>Espessura da borda (px):<input type="number" id="espessuraFigura" value="2" min="0"></label>
+      <label>Largura da borda (px): <input type="number" id="larguraElem" value="250" min="10"></label>
+      <label>Altura da borda (px): <input type="number" id="alturaElem" value="100" min="10"></label>
+      <label>Alinhamento:
+        <select id="alinhamentoElem">
+          <option value="center">Centro</option>
+          <option value="left">Esquerda</option>
+          <option value="right">Direita</option>
+        </select>
+      </label>
 
-  <div class="acoes">
-    <button id="addElem">Adicionar ao Cabeçalho</button>
-    <button id="limparCab">Limpar Cabeçalho</button>
-  </div>
-</div>
-
-
-  <!--TABELA-->
-  <div class="tabela-inputs" id="tabela-inputs">
-    <h2> Editor de Tabelas</h2>
-
-    <label>
-      Nome da tabela:
-      <input type="text" id="nomeTabela" maxlength="90" value="Minha Tabela">
-    </label>
-    <label>
-      Nome da coluna 1:
-      <input type="text" id="coluna1" maxlength="30" value="Coluna 1">
-    </label>
-    <label>
-      Nome da coluna 2:
-      <input type="text" id="coluna2" maxlength="30" value="Coluna 2">
-    </label>
-    <label>
-      Nome da coluna 3:
-      <input type="text" id="coluna3" maxlength="30" value="Coluna 3">
-    </label>
-
-    <label>
-      Número de linhas:
-      <input type="number" id="numLinhas" min="1" max="30" value="4">
-    </label>
-    <label>
-      Cor do Texto:
-      <input type="color" id="corTexto" value="#000000">
-    </label>
-    <label>
-      Cor da Borda:
-      <input type="color" id="corBorda" value="#000000">
-    </label>
-    <label>
-      Cor do Fundo:
-      <input type="color" id="corFundo" value="#ffffff">
-    </label>
-
-    <div class="acoes">
-      <button id="criar">Inserir Tabela</button>
+      <div class="acoes">
+        <button id="addElem">Adicionar ao Cabeçalho</button>
+        <button id="limparCab">Limpar Cabeçalho</button>
+      </div>
     </div>
 
 
-  </div>
+    <!--TABELA-->
+    <div class="tabela-inputs" id="tabela-inputs">
+      <h2> Editor de Tabelas</h2>
 
-  <!--Rodapé-->
-  <div class="footer-inputs" id="footer-inputs">
-    <h2>Editor de Rodapé</h2>
-    <label>Texto do Rodapé:<input type="text" id="textoRodape"></label>
-    <label>Tamanho da Fonte:<input type="number" id="tamanhoFonteRodape" value="14" min="10" max="30"></label>
-    <label>Cor do Texto:<input type="color" id="corTextoRodape" value="#ffffff"></label>
-    <label>Cor de Fundo:<input type="color" id="corFundoRodape" value="#333333"></label>
-   <label>
-      Alinhamento do Texto:
-      <select id="alinhamentoRodape">
-        <option value="center">Centro</option>
-        <option value="left">Esquerda</option>
-        <option value="right">Direita</option>
-      </select>
-    </label>
+      <label>
+        Nome da tabela:
+        <input type="text" id="nomeTabela" maxlength="90" value="Minha Tabela">
+      </label>
+      <label>
+        Nome da coluna 1:
+        <input type="text" id="coluna1" maxlength="30" value="Coluna 1">
+      </label>
+      <label>
+        Nome da coluna 2:
+        <input type="text" id="coluna2" maxlength="30" value="Coluna 2">
+      </label>
+      <label>
+        Nome da coluna 3:
+        <input type="text" id="coluna3" maxlength="30" value="Coluna 3">
+      </label>
 
-    <div class="acoes">
-      <button id="atualizarRodape">Atualizar Rodapé</button>
+      <label>
+        Número de linhas:
+        <input type="number" id="numLinhas" min="1" max="30" value="4">
+      </label>
+      <label>
+        Cor do Texto:
+        <input type="color" id="corTexto" value="#000000">
+      </label>
+      <label>
+        Cor da Borda:
+        <input type="color" id="corBorda" value="#000000">
+      </label>
+      <label>
+        Cor do Fundo:
+        <input type="color" id="corFundo" value="#ffffff">
+      </label>
+
+      <div class="acoes">
+        <button id="criar">Inserir Tabela</button>
+      </div>
+
+
+    </div>
+
+    <!--Rodapé-->
+    <div class="footer-inputs" id="footer-inputs">
+      <h2>Editor de Rodapé</h2>
+      <label>Texto do Rodapé:<input type="text" id="textoRodape"></label>
+      <label>Tamanho da Fonte:<input type="number" id="tamanhoFonteRodape" value="14" min="10" max="30"></label>
+      <label>Cor do Texto:<input type="color" id="corTextoRodape" value="#ffffff"></label>
+      <label>Cor de Fundo:<input type="color" id="corFundoRodape" value="#333333"></label>
+      <label>
+        Alinhamento do Texto:
+        <select id="alinhamentoRodape">
+          <option value="center">Centro</option>
+          <option value="left">Esquerda</option>
+          <option value="right">Direita</option>
+        </select>
+      </label>
+
+      <div class="acoes">
+        <button id="atualizarRodape">Atualizar Rodapé</button>
+      </div>
+    </div>
+
+
+
+    <!--Localstorage-->
+    <div class="localStorage">
+      <h2>Controle da Página</h2>
+      <div class="acoes">
+        <button id="salvar">Salvar Página</button>
+        <button id="recuperar">Recuperar Página</button>
+        <button id="apagar">Limpar Dados</button>
+      </div>
+
+      <h3>HTML recuperado:</h3>
+      <pre id="saidaHtml"></pre>
     </div>
   </div>
-
 
   <!--Saidas-->
+  <div class="Direita">
+    <div id="cabecalho"></div>
 
-  <div id="cabecalho"></div>
+    <div id="divTabela"></div>
 
-  <div id="divTabela"></div>
-
-  <div id="footer"></div>
-
-
-  <div class="localStorage">
-  <h2>Controle da Página</h2>
-  
-
-  <!--Localstorage-->
-  <div class="acoes">
-    <button id="salvar">Salvar Página</button>
-    <button id="recuperar">Recuperar Página</button>
-    <button id="apagar">Limpar Dados</button>
-  </div>
-
-  <h3>HTML recuperado:</h3>
-  <pre id="saidaHtml"></pre>
+    <div id="footer"></div>
   </div>
 
   <script src="js/script.js"></script>

@@ -13,21 +13,19 @@ body {
   gap: 20px;
 }
 
-/* Coluna da esquerda - Controles */
-.coluna-esquerda {
-  width: 35%;
+.Esquerda {
+  width: 40%;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Coluna da direita - Página gerada */
-.coluna-direita {
-  width: 65%;
+.Direita {
+  width: 60%;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: space-evenly;
+  justify-content: space-evenly;
 }
 
 .header-inputs,
@@ -37,7 +35,6 @@ body {
   background: white;
   border-radius: 12px;
   padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
@@ -126,7 +123,6 @@ button:hover {
 #divTabela > div {
   margin-bottom: 20px;
   padding: 15px;
-  background: #f8f9fa;
   border-radius: 8px;
 }
 
@@ -198,10 +194,4 @@ td input {
   max-height: 300px;
 }
 
-.opt-section {
-  background: #f8f9fa;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 10px 0;
-}
 
