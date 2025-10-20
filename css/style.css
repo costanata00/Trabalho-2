@@ -9,6 +9,25 @@ body {
   background: #51A3A3;
   min-height: 100vh;
   padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Coluna da esquerda - Controles */
+.coluna-esquerda {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Coluna da direita - Página gerada */
+.coluna-direita {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: space-evenly;
 }
 
 .header-inputs,
@@ -18,11 +37,15 @@ body {
   background: white;
   border-radius: 12px;
   padding: 25px;
-  margin-bottom: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-
+h2 {
+  color: #51A3A3;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
 
 h3 {
   color: #FFBA08;
@@ -60,9 +83,15 @@ button {
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-/* Container de ações */
+button:hover {
+  background: #3d8a8a;
+  transform: translateY(-2px);
+}
+
 .acoes {
   display: flex;
   gap: 15px;
@@ -70,12 +99,10 @@ button {
   flex-wrap: wrap;
 }
 
-/* Área de saída - cabeçalho */
 #cabecalho {
   background: white;
   border-radius: 12px;
   padding: 20px;
-  margin-bottom: 25px;
   min-height: 100px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -83,7 +110,6 @@ button {
   align-items: flex-start;
   gap: 10px;
 }
-
 
 #cabecalho form input {
   width: 95%;
@@ -93,7 +119,6 @@ button {
   background: white;
   border-radius: 12px;
   padding: 20px;
-  margin-bottom: 25px;
   min-height: 100px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -152,7 +177,6 @@ td input {
   background: #000000;
   color: #ffffff;
   padding: 30px;
-  margin-bottom: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   min-height: 80px;
@@ -171,5 +195,13 @@ td input {
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow-y: auto;
+  max-height: 300px;
+}
+
+.opt-section {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
 }
 
